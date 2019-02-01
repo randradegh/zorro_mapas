@@ -1,0 +1,111 @@
+<html><body>
+  <div id="mapdiv"></div>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+  <script>
+    map = new OpenLayers.Map("mapdiv");
+    map.addLayer(new OpenLayers.Layer.OSM());
+
+    var lonLat = new OpenLayers.LonLat(-99.2530477, 19.5712388)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+    var lonLat1 = new OpenLayers.LonLat(-99.255389, 19.5703258)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+<!-- Datos -->
+<!---
+var lonLat1 = new OpenLayers.LonLat(-99.3516972,19.5457621)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat2 = new OpenLayers.LonLat(-99.3044248,19.493979)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat3 = new OpenLayers.LonLat(-99.2445412,19.4666842)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat4 = new OpenLayers.LonLat(-99.2519831,19.4553762)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat5 = new OpenLayers.LonLat(-99.1940238,19.5404804)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat6 = new OpenLayers.LonLat(-99.3284169,19.6214412)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat7 = new OpenLayers.LonLat(-99.3286988,19.6248475)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat8 = new OpenLayers.LonLat(-99.1815459,19.5550151)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat9 = new OpenLayers.LonLat(-99.2530477,19.5712388)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat10 = new OpenLayers.LonLat(-99.255389,19.5703258)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat11 = new OpenLayers.LonLat(-99.2274575,19.5804826)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat12 = new OpenLayers.LonLat(-99.3044248,19.493979)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat13 = new OpenLayers.LonLat(-99.0589812,19.5708609)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat14 = new OpenLayers.LonLat(-99.3364402,19.5495587)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat15 = new OpenLayers.LonLat(-99.1256171,19.5141471)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+var lonLat16 = new OpenLayers.LonLat(-99.3044248,19.493979)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject());
+-->
+    var zoom=16;
+
+    var markers = new OpenLayers.Layer.Markers( "Markers" );
+    map.addLayer(markers);
+    
+    markers.addMarker(new OpenLayers.Marker(lonLat));
+    markers.addMarker(new OpenLayers.Marker(lonLat1));
+<!--    markers.addMarker(new OpenLayers.Marker(lonLat2));
+    markers.addMarker(new OpenLayers.Marker(lonLat3));
+    markers.addMarker(new OpenLayers.Marker(lonLat4));
+    markers.addMarker(new OpenLayers.Marker(lonLat5));
+    markers.addMarker(new OpenLayers.Marker(lonLat6));
+    markers.addMarker(new OpenLayers.Marker(lonLat7));
+    markers.addMarker(new OpenLayers.Marker(lonLat8));
+    markers.addMarker(new OpenLayers.Marker(lonLat9));
+    markers.addMarker(new OpenLayers.Marker(lonLat10);
+    markers.addMarker(new OpenLayers.Marker(lonLat11);
+    markers.addMarker(new OpenLayers.Marker(lonLat12);
+    markers.addMarker(new OpenLayers.Marker(lonLat13);
+    markers.addMarker(new OpenLayers.Marker(lonLat14);
+    markers.addMarker(new OpenLayers.Marker(lonLat15);
+    markers.addMarker(new OpenLayers.Marker(lonLat16);
+-->
+    map.setCenter (lonLat, zoom);
+  </script>
+</body></html>
